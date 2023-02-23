@@ -77,7 +77,24 @@ function endQuiz() {
   quiz.innerHTML = `
     <h2>Quiz Completed!</h2>
     <h3>Your score is ${score}/${quizData.length}.</h3>
+    <label for="initials">Enter your initials:</label>
+    <input type="text" id="initials">
+    <button id="save-score">Save Score</button>
   `;
+  const saveScoreBtn = document.getElementById("save-score");
+  saveScoreBtn.addEventListener("click", saveScore);
+}
+
+function saveScore() {
+  const initialsInput = document.getElementById("initials");
+  const initials = initialsInput.value;
+  if (initials !== "") {
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    highScores.push({ initials, score });
+    highScores.sort((a, b) => b.score - a.score);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    window.location.assign("highscores.html");
+  }
 }
 
 function loadQuiz() {

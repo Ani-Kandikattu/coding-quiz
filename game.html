@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App</title>
+    <link rel="stylesheet" href="assets/styles.css" />
     <link rel="stylesheet" href="assets/game.css" />
   </head>
   <body>
-    </div>
-    <div class="quiz-container" id="quiz">
+    <div class="quiz-container" id="quiz" class="justify-center flex-column">
       <header class="quiz-header">
         <h2 id="question">Question:</h2>
         <ul>
@@ -37,6 +37,19 @@
 
       <button id="submit">SUBMIT</button>
       <h3 id="timer"></h3>
+    </div>
+
+    <div
+      class="quiz-container"
+      id="end-page"
+      class="justify-center flex-column"
+      style="display: none"
+    >
+      <h2 id="end-message"></h2>
+      <h3 id="score"></h3>
+      <p>Do you want to save your score?</p>
+      <button id="save-score">YES</button>
+      <button id="no-save-score">NO</button>
     </div>
 
     <script src="script.js"></script>

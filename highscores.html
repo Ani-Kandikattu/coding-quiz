@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>High Scores</title>
+  </head>
+  <body>
+    <h1>High Scores</h1>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+      <script>
+        const scores = JSON.parse(localStorage.getItem("highScores")) || [];
+        scores.forEach((score) => {
+          const row = document.createElement("tr");
+          const nameCell = document.createElement("td");
+          const scoreCell = document.createElement("td");
+          nameCell.textContent = score.name;
+          scoreCell.textContent = score.score;
+          row.appendChild(nameCell);
+          row.appendChild(scoreCell);
+          document.querySelector("table").appendChild(row);
+        });
+      </script>
+    </table>
+  </body>
+</html>

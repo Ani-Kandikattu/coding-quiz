@@ -65,3 +65,7 @@ button:hover {
 button:focus {
   outline: none;
 }
+
+h3 {
+  text-align: center;
+}
